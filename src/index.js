@@ -5,9 +5,16 @@ import { ThemeProvider } from 'styled-components';
 
 const theme ={
   colors:{
-    color: 'red',
+    white: 'white',
     accent: 'tomato',
   },
+
+  radii: {
+    s: '2px',
+    m: '4px',
+    l: '8px',
+    xl: '16px',
+  }
 };
 
 ReactDOM.createRoot(document.getElementById('root')).render(

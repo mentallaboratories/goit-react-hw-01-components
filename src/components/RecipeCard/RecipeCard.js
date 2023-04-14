@@ -1,31 +1,40 @@
 import PropTypes from 'prop-types';
 import { AiOutlineClockCircle, AiOutlinePieChart, AiOutlineBarChart } from 'react-icons/ai';
+import { BadgeList, InfoBlock, RecipeInfo, Badge } from './RecipeCard.styled';
 
-export const RecipeCard = ({item:{image, name, time, servings, calories, difficulty},})=>{
+export const RecipeCard = ({item:{image, name, time, servings, calories, difficulty},})=>{ 
     return(
         <div>
             <img src={image} alt={name} width="240"/>
             <h2>{name}</h2>
-            <div style={{display: 'flex', gap: 3}}>
-                <p>
+            <RecipeInfo>
+                <InfoBlock>
                 <AiOutlineClockCircle size='20'/>
                 <span>{time} min</span>
-                </p>
-                <p>
+                </InfoBlock>
+                <InfoBlock>
                 <AiOutlinePieChart size='20'/>
                 <span>{servings} servings</span>
-                </p>
-                <p>
+                </InfoBlock>
+                <InfoBlock>
                 <AiOutlineBarChart size='20'/>
                 <span>{calories} calories</span>
-                </p>
-            </div>
+                </InfoBlock>
+            </RecipeInfo>
 
             <div>
                 <h3>Difficulty</h3>
-                    <span>Easy</span>
-                    <span>Medium</span>
-                    <span>Hard</span>
+                <BadgeList>
+                    <Badge active={difficulty === 'easy'} type='easy'>
+                        Easy
+                    </Badge>
+                    <Badge active={difficulty === 'medium'} type='medium'>
+                        Medium
+                    </Badge>
+                    <Badge active={difficulty === 'hard'} type='hard'>
+                        Hard
+                    </Badge>
+                </BadgeList>
             </div>
         </div>
     );

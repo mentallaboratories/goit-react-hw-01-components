@@ -11,7 +11,7 @@ height: 160px;
 background-color: white;
 color: gray;
 
-margin: 0 auto;
+margin: 0 auto 20px auto;
 border-radius: 0 0 5px 5px;
 
 -webkit-box-shadow: 2px 6px 5px 0px rgba(70,130,180,0.75);
@@ -41,7 +41,7 @@ export const List = styled.ul`
 `;
 
 export const ListItem = styled.li`
-    display:flex;
+    display:none;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -59,6 +59,18 @@ export const ListItem = styled.li`
             return color;
         }
     };
+
+    :first-child{
+        border-radius: 0 0 0 5px;
+    }
+
+    :nth-child(4){
+        border-radius: 0 0 5px 0;
+    }
+
+    :nth-child(-n+4){
+        display:flex;
+    }
 `;
 
 export const Label = styled.span`

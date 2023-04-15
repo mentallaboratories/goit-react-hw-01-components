@@ -6,9 +6,11 @@ import {Statistics} from './Statistics/Statistics';
 // імпорт JSON
 import user from '../user.json';
 import data from '../data.json';
+import friends from '../friends.json';
 
 import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
+import { FriendList } from './FriendList/FriendList';
 
 export const App = () => {
   return (
@@ -17,6 +19,7 @@ export const App = () => {
       {/* <RecipeList items={recipes}/> */}
       <Profile item={user}/>
       <Statistics data={data}/>
+      <FriendList items={friends}/>
       <GlobalStyle/>
       </Layout>
     </div>

@@ -11,7 +11,7 @@ const theme ={
 
   radii: {
     s: '2px',
-    m: '4px',
+    m: '5px',
     l: '8px',
     xl: '16px',
   }

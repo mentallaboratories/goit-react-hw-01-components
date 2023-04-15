@@ -14,7 +14,12 @@ export const ProfileContainer = styled.div`
     color: gray;
 
     margin: 0 auto;
+    margin-bottom: 20px;
     border-radius: 5px;
+
+    -webkit-box-shadow: 2px 6px 5px 0px rgba(70,130,180,0.75);
+    -moz-box-shadow: 2px 6px 5px 0px rgba(70,130,180,0.75);
+    box-shadow: 2px 6px 5px 0px rgba(70,130,180,0.75);
 
     h2, h3{
         color: steelblue;

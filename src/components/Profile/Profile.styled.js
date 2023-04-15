@@ -39,9 +39,11 @@ export const AvatarContainer = styled.div`
     background-color: lightgray;
 
     img{
-        width: 100%;
+        width: fit-content;
+        height: auto;
+
         border-radius: 50%;
-        
+        object-fit: fill;
     }
 `;
 

@@ -1,29 +1,19 @@
 import PropTypes from 'prop-types';
-import { StatisticsSection } from './Statistics.styled';
+import { StatisticsSection, List, ListItem, Label, Percentage } from './Statistics.styled';
 
-export const Statistics = ({data:{id,label,percentage}})=>{
+export const Statistics = ({data})=>{
     return(
         <StatisticsSection>
-            <h2>Upload stats</h2>
+        <h2>Upload stats</h2>
 
-<ul>
-  <li>
-    <span>.docx</span>
-    <span>4%</span>
-  </li>
-  <li>
-    <span>.mp3</span>
-    <span>14%</span>
-  </li>
-  <li>
-    <span>.pdf</span>
-    <span>41%</span>
-  </li>
-  <li>
-    <span>.mp4</span>
-    <span>12%</span>
-  </li>
-</ul>
+        <List>
+            {data.map((item ) => (
+                <ListItem key = {item.id}>
+                     <Label>{item.label}</Label>
+                    <Percentage>{item.percentage}%</Percentage> 
+                </ListItem>
+            ))} 
+        </List>
         </StatisticsSection>
     );
 };

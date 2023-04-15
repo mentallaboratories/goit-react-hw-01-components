@@ -3,12 +3,10 @@ import styled from 'styled-components';
 export const StatisticsSection = styled.section`
 display: flex;
 flex-direction: column;
-gap: 3px;
 align-items: center;
-justify-content: space-between;
 
 width: 300px;
-height: 150px;
+height: 160px;
 
 background-color: white;
 color: gray;
@@ -25,5 +23,50 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width:100%;
+    height:85px;
+
+    text-transform: uppercase;
 }
+`;
+
+export const List = styled.ul`
+    width = 300px;
+    height = 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
+
+export const ListItem = styled.li`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 75px;
+    height: 75px;
+
+    background-color: ${p=>
+        {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    };
+`;
+
+export const Label = styled.span`
+    color: white;
+`;
+
+export const Percentage = styled.span`
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
 `;

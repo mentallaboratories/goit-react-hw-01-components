@@ -14,7 +14,7 @@ background-color: white;
 color: gray;
 
 margin: 0 auto;
-border-radius: 5px;
+border-radius: 0 0 5px 5px;
 
 -webkit-box-shadow: 2px 6px 5px 0px rgba(70,130,180,0.75);
 -moz-box-shadow: 2px 6px 5px 0px rgba(70,130,180,0.75);

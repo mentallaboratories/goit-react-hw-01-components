@@ -47,7 +47,6 @@ img {
     margin: 0;
     max-width: 100%;
     height: auto;
-    width: 100%;
 }
   
   code {

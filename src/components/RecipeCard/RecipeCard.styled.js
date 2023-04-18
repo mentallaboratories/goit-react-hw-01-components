@@ -1,5 +1,27 @@
 import styled from 'styled-components';
 
+export const Actions = styled.div`
+    max-width: 50px;
+    height: 24px;
+    display:flex;
+    justify-content: space-between;
+`;
+
+
+export const Name = styled.h2`
+    max-width: 250px;
+    text-align: center;
+`;
+
+export const Image = styled.img`
+    width: 250px;
+    border-radius: ${p=>p.theme.radii.l}
+`;
+
+export const Meta = styled.div`
+    width: 250px
+`;
+
 export const RecipeInfo = styled.div`
     display: flex;
     gap: 7px;

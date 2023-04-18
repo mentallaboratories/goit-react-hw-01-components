@@ -1,13 +1,34 @@
 import PropTypes from 'prop-types';
-import { AiOutlineClockCircle, AiOutlinePieChart, AiOutlineBarChart } from 'react-icons/ai';
-import { BadgeList, InfoBlock, RecipeInfo, Badge } from './RecipeCard.styled';
+import { 
+    AiOutlineClockCircle, 
+    AiOutlinePieChart, 
+    AiOutlineBarChart 
+} from 'react-icons/ai';
 
-export const RecipeCard = ({item:{image, name, time, servings, calories, difficulty},})=>{ 
+import {
+    BiTrashAlt, 
+    BiZoomIn
+} from 'react-icons/bi'
+import { 
+    Name,
+    Image,
+    Meta,
+    BadgeList, 
+    InfoBlock, 
+    RecipeInfo, 
+    Badge,
+    Actions
+} from './RecipeCard.styled';
+
+export const RecipeCard = ({item:{id, image, name, time, servings, calories, difficulty},
+onDelete,
+})=>{ 
     return(
         <div>
-            <img src={image} alt={name} width="240"/>
-            <h2>{name}</h2>
-            <RecipeInfo>
+            <Image src={image} alt={name} width="240"/>
+            <Meta>
+                <Name>{name}</Name>
+                <RecipeInfo>
                 <InfoBlock>
                 <AiOutlineClockCircle size='20'/>
                 <span>{time} min</span>
@@ -20,9 +41,7 @@ export const RecipeCard = ({item:{image, name, time, servings, calories, difficu
                 <AiOutlineBarChart size='20'/>
                 <span>{calories} calories</span>
                 </InfoBlock>
-            </RecipeInfo>
-
-            <div>
+                </RecipeInfo>
                 <h3>Difficulty</h3>
                 <BadgeList>
                     <Badge active={difficulty === 'easy'} type='easy'>
@@ -35,7 +54,15 @@ export const RecipeCard = ({item:{image, name, time, servings, calories, difficu
                         Hard
                     </Badge>
                 </BadgeList>
-            </div>
+                <Actions>
+                    <button aria-label="Delete" onClick={()=>onDelete(id)}>
+                        <BiTrashAlt/>
+                    </button>
+                    <button aria-label="Zoom">
+                        <BiZoomIn/> 
+                    </button>
+                </Actions>
+            </Meta>
         </div>
     );
 };

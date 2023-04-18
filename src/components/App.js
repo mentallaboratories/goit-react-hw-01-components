@@ -1,16 +1,32 @@
+import { Component } from 'react';
 import {RecipeList} from './RecipeList/RecipeList';
-import recipes from '../recipes.json'
+import initialRecipes from '../recipes.json';
 import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
 
-export const App = () => {
-  return (
-    <div>
-      <Layout>
-      <RecipeList items={recipes}/>
-      <GlobalStyle/>
-      </Layout>
-    </div>
-  );
+export class App extends Component {
+  state = {
+    recipes: initialRecipes,
+  };
+
+  deleteRecipe = recipeId=>{
+    this.setState(prevState => ({
+      recipes: prevState.recipes.filter(recipe => recipe.id !== recipeId),
+    })); 
+  };
+
+
+  render(){
+    return (
+      <div>
+        <Layout>
+        <RecipeList items={this.state.recipes}
+        onDelete={this.deleteRecipe}/>
+        <div>Modal</div>
+        <GlobalStyle/>
+        </Layout>
+      </div>
+    );
+  }
 };
  

@@ -15,14 +15,15 @@ export class App extends Component {
     })); 
   };
 
-
   render(){
     return (
       <div>
         <Layout>
-        <RecipeList items={this.state.recipes}
-        onDelete={this.deleteRecipe}/>
-        <div>Modal</div>
+        <RecipeList 
+        items={this.state.recipes}
+        onDelete={this.deleteRecipe}
+        />
+        
         <GlobalStyle/>
         </Layout>
       </div>

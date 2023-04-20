@@ -21,6 +21,7 @@ import {
     Actions
 } from './RecipeCard.styled';
 import { ImageModal } from 'components/ImageModal/ImageModal';
+import { RecipeForm } from 'components/RecipeForm/RecipeForm';
 
 
 export class RecipeCard extends Component {
@@ -85,6 +86,9 @@ export class RecipeCard extends Component {
                     </Actions>
                 </Meta>
 
+                <RecipeForm>
+                    
+                </RecipeForm>
 
                 <ImageModal
                     isOpen={selectedImg !== null}

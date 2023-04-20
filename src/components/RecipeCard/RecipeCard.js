@@ -1,4 +1,4 @@
-import Component from 'react';
+import {Component} from 'react';
 import PropTypes from 'prop-types';
 import { 
     AiOutlineClockCircle, 
@@ -20,6 +20,8 @@ import {
     Badge,
     Actions
 } from './RecipeCard.styled';
+import { ImageModal } from 'components/ImageModal/ImageModal';
+
 
 export class RecipeCard extends Component {
     state = {
@@ -30,11 +32,16 @@ export class RecipeCard extends Component {
         this.setState({selectedImg: this.props.item.image});
     };
 
+    closeModal = () =>{
+        this.setState({selectedImg: null});
+    };
+
     render(){
+        const {selectedImg} = this.state
         const {
             item:{id, image, name, time, servings, calories, difficulty},
-        onDelete 
-    }= this.props;
+        onDelete,
+    } = this.props;
     
         return(
             <div>
@@ -67,6 +74,7 @@ export class RecipeCard extends Component {
                             Hard
                         </Badge>
                     </BadgeList>
+
                     <Actions>
                         <button aria-label="Delete" onClick={()=>onDelete(id)}>
                             <BiTrashAlt/>
@@ -76,9 +84,13 @@ export class RecipeCard extends Component {
                         </button>
                     </Actions>
                 </Meta>
-                <div>
-                    Image modal <p>Selected Img</p>
-                </div>
+
+
+                <ImageModal
+                    isOpen={selectedImg !== null}
+                    onClose={this.closeModal}
+                    image={selectedImg}
+                />
             </div>
         );
     }

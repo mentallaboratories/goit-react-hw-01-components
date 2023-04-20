@@ -4,10 +4,13 @@ import initialRecipes from '../recipes.json';
 import { GlobalStyle } from './GlobalStyle';
 import { Layout } from './Layout/Layout';
 
+// initialRecipes state
 export class App extends Component {
   state = {
     recipes: initialRecipes,
   };
+
+  //deleteRecipe function body
 
   deleteRecipe = recipeId=>{
     this.setState(prevState => ({
@@ -21,9 +24,9 @@ export class App extends Component {
         <Layout>
         <RecipeList 
         items={this.state.recipes}
+// props onDelete calls deleteRecipe
         onDelete={this.deleteRecipe}
         />
-        
         <GlobalStyle/>
         </Layout>
       </div>

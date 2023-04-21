@@ -1,37 +1,53 @@
-import {Form, FormField} from './RecipeForm.styled'
+import {Formik, Field, Form} from 'formik';
+import {FormField} from './RecipeForm.styled'
 
 export const RecipeForm = () =>{
     return(
-        <Form>
+        <Formik
+        initialValues={{
+            name: '',
+            image: '',
+            time: 0,
+            servings:0,
+            calories:0,
+            defficulty:''
+          }}
+
+          onSubmit={values => {console.log(values);
+          }}
+        >
+            <Form>
             <FormField>
                 Name
-                <input type='text' name='name'/>
+                <Field name='name'/>
             </FormField>
             <FormField>
                 Image
-                <input type='text' name='image'/>
+                <Field name='image'/>
             </FormField>
             <FormField>
                 Time
-            <input type='number' name='time'/>
+            <Field type='number' name='time'/>
             </FormField>
             <FormField>
                 Servings
-                <input type='number' name='servings'/>
+                <Field type='number' name='servings'/>
             </FormField>
             <FormField>
                 Calories
-                <input type='number' name='calories'/>
+                <Field type='number' name='calories'/>
             </FormField>
             <FormField>
                 Difficulty
-                <select name="difficulty">
+                <Field as='select' name="difficulty">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
-                </select>
+                </Field>
             </FormField>
             <button type="submit">Save recipe</button>
         </Form>
+        </Formik>
+        
     )
 }

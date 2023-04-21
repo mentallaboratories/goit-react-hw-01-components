@@ -1,13 +1,17 @@
 import styled  from "styled-components";
 
 export const Form = styled.form`
-    width: 340px;
-    height: 210px;
+    width: 400px;
+    padding: 8px;
+    border: 1px solid #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    gap:12px;
     background-color: pink;
 `;
 
-export const FormField = styled.fieldset`
-    width: 340px;
-    height: 210px;
-    background-color: red;
+export const FormField = styled.label`
+    display: flex;
+    flex-direction: column;
+    background-color: tomato;
 `;

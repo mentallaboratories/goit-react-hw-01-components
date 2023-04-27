@@ -7,6 +7,7 @@ const theme ={
   colors:{
     white: 'white',
     accent: 'tomato',
+    error: 'red',
   },
 
   radii: {

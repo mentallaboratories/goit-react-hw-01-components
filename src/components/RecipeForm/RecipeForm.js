@@ -25,7 +25,7 @@ export const RecipeForm = ({onSave}) =>{
             time: 0,
             servings:0,
             calories:0,
-            defficulty:''
+            defficulty:"easy",
           }}
 
           validationSchema = {RecipeSchema}

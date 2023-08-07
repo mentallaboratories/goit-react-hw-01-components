@@ -1,13 +1,16 @@
 {
-  "username": "John Dow",
+  "username": "Johfdfdsfdsfdsfdsfw",
   "status": "Student",
-  "tag": "jd",
-  "location": "City, Country",
+  "class": 5,
+  "school": "Savyntsi Gimnasium",
   "avatar": "https://cdn-icons-png.flaticon.com/512/2922/2922506.png",
   "stats": {
-    "followers": 5603,
-    "views": 4827,
-    "likes": 1308
+    "english": 5,
+    "softskills": 8,
+    "it": 8,
+    "teamwork": 43,
+    "projects": 22
+
   },
 
   "login": "login",

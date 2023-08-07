@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { App } from 'components/App';
-import { ThemeProvider } from 'styled-components';
+import React from 'react';// імпортуй бібліотеку 'React з директорії 'react'
+import ReactDOM from 'react-dom/client';// імпортуй бібліотеку 'ReactDOM з директорії 'react-dom/client'
+import { App } from 'components/App';// імпортуй  App.js
+import { ThemeProvider } from 'styled-components';// імпортуй бібліотеку 'React з директорії 'react'
 
-const theme ={
-  colors:{
+const theme ={ // створи об'єкт стилів 
+  colors:{ //властивість-значення
     white: 'white',
     accent: 'tomato',
   },
@@ -19,7 +19,7 @@ const theme ={
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}> 
       <App />
     </ThemeProvider>
   </React.StrictMode>

@@ -54,6 +54,7 @@ img {
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
+    color: tomato;
   }
   
 `;

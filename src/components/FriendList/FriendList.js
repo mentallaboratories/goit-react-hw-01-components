@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; //імпортуємо типи пропсів
 import { FriendListItem } from 'components/FriendListItem/FriendListItem';
-import { List } from './FriendList.styled';
-
+import { List } from './FriendList.styled'; //імпортуємо стилі списку
+// створюємо глобальний компонент СписокДрузів, він буде експортуватися в App на виконання
 export const FriendList = ({items})=>{
     return(
         <List>
@@ -11,7 +11,7 @@ export const FriendList = ({items})=>{
         </List>
     );
 };
-
+//прописуються типи пропсів
 FriendList.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
